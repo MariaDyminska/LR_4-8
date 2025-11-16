@@ -3,3 +3,87 @@
 [2025-11-16 19:23:15] [ERROR] testemail.TestEmailLogging - Це критична помилка для тесту відправки e-mail!
 [2025-11-16 19:45:06] [ERROR] testemail.TestEmailLogging - Це критична помилка для тесту відправки e-mail!
 [2025-11-16 19:46:48] [ERROR] testemail.TestEmailLogging - Це критична помилка!!!
+[2025-11-16 20:09:21] [INFO] menu.ClientMenu - Відкрито меню клієнта
+[2025-11-16 20:09:22] [INFO] menu.ClientMenu - Користувач обрав пункт меню: 1
+[2025-11-16 20:09:34] [INFO] menu.ClientMenu - Виконано пошук кредиту за параметрами
+[2025-11-16 20:09:34] [INFO] menu.ClientMenu - Відкрито меню клієнта
+[2025-11-16 20:09:43] [INFO] menu.ClientMenu - Користувач обрав пункт меню: 2
+[2025-11-16 20:09:44] [INFO] menu.ClientMenu - Підібрано оптимальний кредит
+[2025-11-16 20:09:44] [INFO] menu.ClientMenu - Відкрито меню клієнта
+[2025-11-16 20:09:48] [INFO] menu.ClientMenu - Користувач обрав пункт меню: 3
+[2025-11-16 20:09:50] [INFO] menu.ClientMenu - Переглянуто умови кредиту
+[2025-11-16 20:09:50] [INFO] menu.ClientMenu - Відкрито меню клієнта
+[2025-11-16 20:22:12] [INFO] menu.ManagerMenu - Відображено меню менеджера
+[2025-11-16 20:22:15] [INFO] menu.ManagerMenu - Вибрано додати кредит
+[2025-11-16 20:42:26] [INFO] menu.ManagerMenu - Відображено меню менеджера
+[2025-11-16 20:42:28] [INFO] menu.ManagerMenu - Вибрано додати кредит
+[2025-11-16 20:46:56] [INFO] menu.ClientMenu - Відкрито меню клієнта
+[2025-11-16 20:46:59] [INFO] menu.ClientMenu - Користувач обрав пункт меню: 9
+[2025-11-16 20:47:02] [INFO] menu.ClientMenu - Переглянуто історію кредитів
+[2025-11-16 20:47:02] [INFO] menu.ClientMenu - Відкрито меню клієнта
+[2025-11-16 20:47:14] [INFO] menu.ClientMenu - Користувач обрав пункт меню: 10
+[2025-11-16 20:47:14] [INFO] menu.ClientMenu - Користувач вийшов з меню клієнта
+[2025-11-16 20:47:15] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-16 20:47:16] [INFO] menu.ManagerMenu - Вибрано додати кредит
+[2025-11-16 20:48:32] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-16 20:48:34] [INFO] menu.ManagerMenu - Вибрано додати кредит
+[2025-11-16 20:48:34] [INFO] menu.AddCreditCommand - Почато створення нового кредиту.
+[2025-11-16 20:48:36] [INFO] menu.AddCreditCommand - Вибрано тип кредиту: 1
+[2025-11-16 20:48:38] [INFO] menu.AddCreditCommand - Введено id: 2
+[2025-11-16 20:48:39] [INFO] menu.AddCreditCommand - Назва кредиту: 2
+[2025-11-16 20:48:39] [WARN] menu.AddCreditCommand - Користувач ввів неправильний числовий формат: empty String
+[2025-11-16 20:48:40] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-16 20:48:45] [INFO] menu.ManagerMenu - Редагування кредиту
+[2025-11-16 20:57:49] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-16 20:57:50] [INFO] menu.ManagerMenu - Вибрано додати кредит
+[2025-11-16 20:57:50] [INFO] menu.AddCreditCommand - Почато створення нового кредиту.
+[2025-11-16 20:57:52] [INFO] menu.AddCreditCommand - Вибрано тип кредиту: 2
+[2025-11-16 20:57:53] [INFO] menu.AddCreditCommand - Введено id: 1
+[2025-11-16 20:57:57] [INFO] menu.AddCreditCommand - Назва кредиту: мвв
+[2025-11-16 20:57:59] [INFO] menu.AddCreditCommand - Сума: 122222.0
+[2025-11-16 20:58:00] [INFO] menu.AddCreditCommand - Термін: 12
+[2025-11-16 20:58:02] [INFO] menu.AddCreditCommand - Ставка: 12.0
+[2025-11-16 20:58:04] [INFO] menu.AddCreditCommand - Вартість майна: 2122222.0
+[2025-11-16 20:58:04] [INFO] menu.AddCreditCommand - Кредит успішно додано. ID = 1
+[2025-11-16 20:58:07] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-16 20:58:17] [INFO] menu.ManagerMenu - Перегляд кредитів
+[2025-11-16 20:58:17] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-16 20:58:24] [INFO] menu.ManagerMenu - Вибрано додати кредит
+[2025-11-16 20:58:24] [INFO] menu.AddCreditCommand - Почато створення нового кредиту.
+[2025-11-16 20:58:26] [INFO] menu.AddCreditCommand - Вибрано тип кредиту: 4
+[2025-11-16 20:58:28] [INFO] menu.AddCreditCommand - Введено id: 12
+[2025-11-16 20:58:30] [INFO] menu.AddCreditCommand - Назва кредиту: татк
+[2025-11-16 20:58:32] [INFO] menu.AddCreditCommand - Сума: 122222.0
+[2025-11-16 20:58:34] [INFO] menu.AddCreditCommand - Термін: 222
+[2025-11-16 20:58:36] [INFO] menu.AddCreditCommand - Ставка: 12.0
+[2025-11-16 20:58:41] [INFO] menu.AddCreditCommand - Тип бізнесу: Ринок
+[2025-11-16 20:58:41] [INFO] menu.AddCreditCommand - Кредит успішно додано. ID = 12
+[2025-11-16 20:58:43] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-16 20:58:49] [INFO] menu.ManagerMenu - Завантаження кредитів з файлу перед переглядом
+[2025-11-16 20:59:22] [INFO] menu.ManagerMenu - Перегляд кредитів
+[2025-11-16 20:59:22] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-16 20:59:30] [WARN] menu.ManagerMenu - Вибрано невірний пункт меню: "C:\Users\acer\Desktop\кредити.txt"
+[2025-11-16 20:59:30] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-16 20:59:39] [INFO] menu.ManagerMenu - Завантаження кредитів з файлу перед переглядом
+[2025-11-16 20:59:40] [INFO] menu.ManagerMenu - Перегляд кредитів
+[2025-11-16 20:59:40] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-16 21:01:03] [INFO] menu.ManagerMenu - Завантаження кредитів з файлу перед переглядом
+[2025-11-16 21:01:24] [INFO] menu.ManagerMenu - Перегляд кредитів
+[2025-11-16 21:01:24] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-16 21:01:37] [INFO] menu.ManagerMenu - Вибрано додати кредит
+[2025-11-16 21:01:37] [INFO] menu.AddCreditCommand - Почато створення нового кредиту.
+[2025-11-16 21:01:40] [INFO] menu.AddCreditCommand - Вибрано тип кредиту: 1
+[2025-11-16 21:01:41] [INFO] menu.AddCreditCommand - Введено id: 2
+[2025-11-16 21:01:48] [INFO] menu.AddCreditCommand - Назва кредиту: мій кредит1
+[2025-11-16 21:01:52] [INFO] menu.AddCreditCommand - Сума: 20000.0
+[2025-11-16 21:01:55] [INFO] menu.AddCreditCommand - Термін: 22
+[2025-11-16 21:01:56] [INFO] menu.AddCreditCommand - Ставка: 12.0
+[2025-11-16 21:02:03] [INFO] menu.AddCreditCommand - Страхування: true
+[2025-11-16 21:02:03] [INFO] menu.AddCreditCommand - Кредит успішно додано. ID = 2
+[2025-11-16 21:02:09] [INFO] menu.ManagerMenu - Збереження кредитів у файл
+[2025-11-16 21:02:56] [INFO] menu.SaveToFileCommand - Користувач ініціював збереження у файл: C:\Users\acer\Desktop\Кредити (2).txt
+[2025-11-16 21:02:56] [INFO] menu.SaveToFileCommand - Файл успішно збережено: C:\Users\acer\Desktop\Кредити (2).txt
+[2025-11-16 21:02:56] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-16 21:03:10] [INFO] menu.ManagerMenu - Завантаження кредитів з файлу перед переглядом
+[2025-11-16 21:03:13] [INFO] menu.ManagerMenu - Перегляд кредитів
+[2025-11-16 21:03:13] [INFO] menu.ManagerMenu - Відкрито меню менеджера
