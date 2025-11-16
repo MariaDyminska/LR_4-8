@@ -1,0 +1,5 @@
+[2025-11-16 19:15:00] [ERROR] testemail.TestEmailLogging - Це критична помилка для тесту пошти!
+[2025-11-16 19:20:11] [ERROR] testemail.TestEmailLogging - Це критична помилка для тесту пошти!
+[2025-11-16 19:23:15] [ERROR] testemail.TestEmailLogging - Це критична помилка для тесту відправки e-mail!
+[2025-11-16 19:45:06] [ERROR] testemail.TestEmailLogging - Це критична помилка для тесту відправки e-mail!
+[2025-11-16 19:46:48] [ERROR] testemail.TestEmailLogging - Це критична помилка!!!
