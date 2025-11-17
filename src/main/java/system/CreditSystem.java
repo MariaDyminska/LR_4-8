@@ -197,7 +197,7 @@ public class CreditSystem implements java.io.Serializable {
         }
     }
 
-    // history
+
     private void record(int id, String event) {
         history.computeIfAbsent(id, k -> new ArrayList<>()).add(event);
     }
