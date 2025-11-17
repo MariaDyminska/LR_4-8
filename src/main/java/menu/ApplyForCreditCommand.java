@@ -28,7 +28,7 @@ public class ApplyForCreditCommand implements Command {
 
             Credit c = system.findById(id);
             if (c == null) {
-                System.out.println("❌ Кредит не знайдено.");
+                System.out.println("Кредит не знайдено.");
                 logger.warn("Кредит з id={} не знайдено.", id);
                 return;
             }
@@ -43,7 +43,7 @@ public class ApplyForCreditCommand implements Command {
 
             if (ans.equalsIgnoreCase("так")) {
                 system.getHistory(id).add("Кредит оформлено клієнтом");
-                System.out.println("✔ Кредит успішно оформлено!");
+                System.out.println(" Кредит успішно оформлено!");
                 logger.info("Кредит id={} оформлено.", id);
             } else {
                 System.out.println("Операцію скасовано.");

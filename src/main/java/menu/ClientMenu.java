@@ -16,7 +16,7 @@ public class ClientMenu {
 
     public void show() {
         while (true) {
-            // Логування меню
+
             logger.info("Відкрито меню клієнта");
 
             System.out.println("\nМЕНЮ КЛІЄНТА");

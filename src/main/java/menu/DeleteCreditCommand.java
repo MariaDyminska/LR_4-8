@@ -27,7 +27,7 @@ public class DeleteCreditCommand implements Command {
             int id = Integer.parseInt(input);
 
             system.removeCredit(id);
-            System.out.println("✔ Кредит видалено");
+            System.out.println(" Кредит видалено");
             logger.info("Кредит успішно видалено. id = {}", id);
 
         } catch (NumberFormatException ex) {

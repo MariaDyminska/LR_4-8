@@ -30,7 +30,7 @@ public class MakePaymentCommand implements Command {
             logger.info("Введена сума: {}", amt);
 
             system.makePayment(id, amt);
-            System.out.println("✔Оплату виконано успішно");
+            System.out.println("Оплату виконано успішно");
             logger.info("Оплату виконано успішно для id={}", id);
 
         } catch (NumberFormatException nfe) {
