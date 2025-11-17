@@ -19,7 +19,6 @@ public class ViewHistoryCommand implements Command {
             System.out.print("id: ");
             int id = Integer.parseInt(sc.nextLine().trim());
 
-            // Замінено var на конкретний тип List<String>
             List<String> h = system.getHistory(id);
 
             if (h.isEmpty()) {

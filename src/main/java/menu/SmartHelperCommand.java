@@ -14,7 +14,7 @@ public class SmartHelperCommand implements Command {
 
     @Override
     public void execute() {
-        // Заміна var на конкретний тип Credit
+
         Credit c = system.smartHelper();
 
         if (c == null) {

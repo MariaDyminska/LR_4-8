@@ -9,7 +9,6 @@ public class CreditSystem implements java.io.Serializable {
     private List<Credit> creditList = new ArrayList<>();
     private Map<Integer, List<String>> history = new HashMap<>();
 
-    // === ДОДАНО для тестів ===
     public List<Credit> getCredits() {
         return creditList;
     }
