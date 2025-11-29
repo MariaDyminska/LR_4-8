@@ -29,6 +29,7 @@ public class Main {
                 case "1": new ManagerMenu(system).show(); break;
                 case "2": new ClientMenu(system).show(); break;
                 case "3": System.out.println("До побачення"); return;
+
                 default: System.out.println("Невірний пункт");
             }
 

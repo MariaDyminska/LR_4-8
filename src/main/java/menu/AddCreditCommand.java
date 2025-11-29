@@ -25,7 +25,7 @@ public class AddCreditCommand implements Command {
         try {
             System.out.print("Виберіть тип (1-Споживчий,2-Іпотека,3-Авто,4-Бізнес): ");
             String t = sc.nextLine().trim();
-            logger.info("Вибрано тип кредиту: {}", t);
+            logger.error("Вибрано тип кредиту: {}", t);
 
             System.out.print("id: ");
             int id = Integer.parseInt(sc.nextLine().trim());

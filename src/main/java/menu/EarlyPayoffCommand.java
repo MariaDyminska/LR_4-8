@@ -34,7 +34,7 @@ public class EarlyPayoffCommand implements Command {
             logger.info("Дострокове погашення виконано для id=" + id);
 
         } catch (NumberFormatException nfe) {
-            logger.warn("Некоректний числовий формат: " + nfe.getMessage());
+            logger.error("Некоректний числовий формат: " + nfe.getMessage());
             System.out.println("Помилка: неправильний формат числа");
 
         } catch (Exception e) {

@@ -1,11 +1,39 @@
-<configuration>
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>%d{HH:mm:ss} %-5level %logger - %msg%n</pattern>
-        </encoder>
-    </appender>
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
 
-    <root level="debug">
-        <appender-ref ref="STDOUT"/>
-    </root>
-</configuration>
+    <Appenders>
+
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss} %-5level %logger - %msg%n"/>
+        </Console>
+
+        <SMTP name="EmailAppender"
+              subject="!!! КРИТИЧНА ПОМИЛКА: Кредитна Система !!!"
+              to="mariia.dyminska.oi.2024@lpnu.ua"
+              from="mariia.dyminska.oi.2024@lpnu.ua"
+              smtpHost="smtp.gmail.com"
+              smtpPort="465"
+              smtpProtocol="smtps"
+              smtpUsername="mariia.dyminska.oi.2024@lpnu.ua"
+              smtpPassword="dcdt mmwm qkmz upil"
+              smtpDebug="true"
+              bufferSize="1"
+              ignoreExceptions="false">
+
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n%nStack Trace:%n%throwable"/>
+
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+        </SMTP>
+
+    </Appenders>
+
+    <Loggers>
+
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="EmailAppender"/>
+        </Root>
+
+    </Loggers>
+
+</Configuration>
