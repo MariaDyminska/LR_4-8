@@ -1,46 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN">
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss} %-5level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
 
-    <Appenders>
-        <!-- Консоль -->
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="[%d{HH:mm:ss}] %-5p %c - %m%n"/>
-        </Console>
-
-        <!-- Файл з ротацією -->
-        <RollingFile name="FileLogger"
-                     fileName="logs/app.log"
-                     filePattern="logs/app-%d{yyyy-MM-dd}-%i.log.gz">
-            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}] [%p] %c - %m%n"/>
-            <Policies>
-                <SizeBasedTriggeringPolicy size="5MB"/>
-            </Policies>
-        </RollingFile>
-
-        <!-- SMTP Appender для критичних помилок -->
-        <SMTP name="EmailAppender"
-              subject="CRITICAL ERROR in application"
-              to="mariia.dyminska.oi.2024@lpnu.ua"
-              from="mariia.dyminska.oi.2024@lpnu.ua"
-              smtpHost="smtp.gmail.com"
-              smtpPort="465"
-              smtpProtocol="smtps"
-              smtpUsername="mariia.dyminska.oi.2024@lpnu.ua"
-              smtpPassword="lbxv ivrm unqe iapz"
-              bufferSize="512">
-            <PatternLayout pattern="CRITICAL ERROR:%n%n %m%n%nLogger: %c"/>
-            <Filters>
-                <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
-            </Filters>
-        </SMTP>
-    </Appenders>
-
-    <Loggers>
-        <Root level="info">
-            <AppenderRef ref="Console"/>
-            <AppenderRef ref="FileLogger"/>
-            <AppenderRef ref="EmailAppender"/>
-        </Root>
-    </Loggers>
-
-</Configuration>
+    <root level="debug">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

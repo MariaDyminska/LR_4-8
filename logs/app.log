@@ -87,3 +87,20 @@
 [2025-11-16 21:03:10] [INFO] menu.ManagerMenu - Завантаження кредитів з файлу перед переглядом
 [2025-11-16 21:03:13] [INFO] menu.ManagerMenu - Перегляд кредитів
 [2025-11-16 21:03:13] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-17 10:09:35] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-17 10:09:41] [INFO] menu.ManagerMenu - Вихід з меню менеджера
+[2025-11-17 10:09:42] [INFO] menu.ClientMenu - Відкрито меню клієнта
+[2025-11-29 22:16:28] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-29 22:16:35] [INFO] menu.ManagerMenu - Редагування кредиту
+[2025-11-29 22:16:35] [INFO] menu.EditCreditCommand - Почато редагування кредиту.
+[2025-11-29 22:16:46] [INFO] menu.EditCreditCommand - Введено id: 2
+[2025-11-29 22:16:49] [INFO] menu.EditCreditCommand - Введена нова назва: ''
+[2025-11-29 22:16:50] [INFO] menu.EditCreditCommand - Введена нова сума: ''
+[2025-11-29 22:16:50] [INFO] menu.EditCreditCommand - Введений новий термін: ''
+[2025-11-29 22:16:51] [INFO] menu.EditCreditCommand - Введена нова ставка: ''
+[2025-11-29 22:16:51] [INFO] menu.EditCreditCommand - Кредит id=2 успішно оновлено.
+[2025-11-29 22:16:52] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-29 22:16:55] [WARN] menu.ManagerMenu - Вибрано невірний пункт меню: 
+[2025-11-29 22:16:55] [INFO] menu.ManagerMenu - Відкрито меню менеджера
+[2025-11-29 22:16:57] [WARN] menu.ManagerMenu - Вибрано невірний пункт меню: 
+[2025-11-29 22:16:57] [INFO] menu.ManagerMenu - Відкрито меню менеджера

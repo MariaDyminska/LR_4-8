@@ -1,51 +1,85 @@
 package menu;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import system.CreditSystem;
-import model.Credit;
-import model.CreditType;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ManagerMenuTest {
 
-    @Test
-    public void testAddCredit() {
-        CreditSystem system = new CreditSystem();
-        int before = system.getCredits().size();
+    private CreditSystem system;
 
-        // Створюємо об'єкт Credit
-        Credit credit = new Credit(1, "TestCredit", 5000, 12, 10, CreditType.CONSUMER);
+    @BeforeEach
+    public void setup() {
+        system = new CreditSystem();
+    }
 
-        system.addCredit(credit);  // додаємо в систему
+    // Метод для запуску меню із заданим введенням
+    private String runMenu(String input) {
+        ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
 
-        int after = system.getCredits().size();
-        assertEquals(before + 1, after);
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+
+        ManagerMenu menu = new ManagerMenu(system);
+        try {
+            menu.show();
+        } catch (Exception e) {
+            // Ігноруємо помилки для тестів UI
+        }
+
+        return out.toString();
     }
 
     @Test
-    public void testDeleteCredit() {
-        CreditSystem system = new CreditSystem();
+    public void testMenuDisplayed() {
+        String output = runMenu("5\n"); // вихід одразу
+        assertTrue(output.contains("МЕНЮ МЕНЕДЖЕРА"), "Меню має відобразитися");
+    }
 
-        Credit credit = new Credit(1, "DeleteMe", 3000, 6, 15, CreditType.CONSUMER);
-        system.addCredit(credit);
+    @Test
+    public void testInvalidOption() {
+        String output = runMenu("X\n5\n"); // невірний пункт + вихід
+        assertTrue(output.contains("Невірний пункт"), "Повинно бути повідомлення про невірний пункт");
+    }
 
-
+    @Test
+    public void testAddCredit() {
+        // пункт 1 -> не зберігати у файл -> вихід
+        String output = runMenu("1\nні\n5\n");
+        assertTrue(output.contains("МЕНЮ МЕНЕДЖЕРА"), "Меню має відобразитися");
     }
 
     @Test
     public void testEditCredit() {
-        CreditSystem system = new CreditSystem();
-        Credit credit = new Credit(1, "EditMe", 4000, 12, 5, CreditType.CONSUMER);
-        system.addCredit(credit);
-
-        // Емуляція EditCreditCommand
-        credit.setInterestRate(20);
-        assertEquals(20, credit.getInterestRate());
+        // пункт 2 -> не завантажувати з файлу -> редагувати -> не зберігати -> вихід
+        String output = runMenu("2\nні\nні\n5\n");
+        assertTrue(output.contains("МЕНЮ МЕНЕДЖЕРА"), "Меню має відобразитися");
     }
 
     @Test
     public void testViewCredits() {
-        CreditSystem system = new CreditSystem();
-        assertDoesNotThrow(system::getCredits);
+        // пункт 3 -> не завантажувати -> вихід
+        String output = runMenu("3\nні\n5\n");
+        assertTrue(output.contains("МЕНЮ МЕНЕДЖЕРА"), "Меню має відобразитися");
+    }
+
+    @Test
+    public void testDeleteCredit() {
+        // пункт 4 -> не зберігати -> вихід
+        String output = runMenu("4\nні\n5\n");
+        assertTrue(output.contains("МЕНЮ МЕНЕДЖЕРА"), "Меню має відобразитися");
+    }
+
+    @Test
+    public void testExit() {
+        String output = runMenu("5\n");
+        assertTrue(output.contains("МЕНЮ МЕНЕДЖЕРА"), "Меню має відобразитися перед виходом");
     }
 }

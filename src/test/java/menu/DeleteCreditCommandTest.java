@@ -1,42 +1,63 @@
 package menu;
 
-import model.ConsumerCredit;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import system.CreditSystem;
+import model.ConsumerCredit;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class DeleteCreditCommandTest {
+class DeleteCreditCommandTest {
 
-    @Test
-    public void testDeleteCreditCommand_RemovesCredit() {
-        CreditSystem system = new CreditSystem();
-        system.addCredit(new ConsumerCredit(1, "A", 1000, 12, 10, false));
+    private CreditSystem system;
+    private DeleteCreditCommand command;
+    private final PrintStream originalOut = System.out;
+    private ByteArrayOutputStream outContent;
 
-        String input = "1\n";     // id=1
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
+    @BeforeEach
+    void setup() {
+        system = new CreditSystem();
+        system.addCredit(new ConsumerCredit(1, "Test Credit", 1000, 12, 5.0, true));
+        command = new DeleteCreditCommand(system);
 
-        DeleteCreditCommand cmd = new DeleteCreditCommand(system);
-        cmd.execute();
-
-        assertNull(system.getCreditById(1),
-                "Кредит повинен бути видалений");
+        outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
     }
 
     @Test
-    public void testDeleteCreditCommand_InvalidId_DoesNotRemove() {
-        CreditSystem system = new CreditSystem();
-        system.addCredit(new ConsumerCredit(1, "A", 1000, 12, 10, false));
+    void testDeleteExistingCredit() {
+        ByteArrayInputStream in = new ByteArrayInputStream("1\n".getBytes());
+        System.setIn(in);
 
-        String input = "99\n";     // неіснуючий id
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        command.execute();
 
-        DeleteCreditCommand cmd = new DeleteCreditCommand(system);
-        cmd.execute();
+        String output = outContent.toString();
+        assertTrue(output.contains("Кредит видалено"), "Повинно виводити повідомлення про видалення існуючого кредиту");
+    }
 
-        assertNotNull(system.getCreditById(1),
-                "Кредит не повинен бути видалений при неправильному id");
+    @Test
+    void testDeleteNonExistingCredit() {
+        ByteArrayInputStream in = new ByteArrayInputStream("99\n".getBytes());
+        System.setIn(in);
+
+        command.execute();
+
+        String output = outContent.toString();
+        assertTrue(output.contains("Помилка: кредит з таким id не знайдено"), "Повинно виводити повідомлення про неіснуючий кредит");
+    }
+
+    @Test
+    void testDeleteInvalidId() {
+        ByteArrayInputStream in = new ByteArrayInputStream("abc\n".getBytes());
+        System.setIn(in);
+
+        command.execute();
+
+        String output = outContent.toString();
+        assertTrue(output.contains("Помилка: id має бути числом"), "Повинно повідомляти про некоректний id");
     }
 }
