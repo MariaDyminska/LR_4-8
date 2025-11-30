@@ -22,7 +22,7 @@ public class Main {
             if (sc.hasNextLine()) {
                 opt = sc.nextLine().trim();
             } else {
-                break; // якщо немає рядка (для тестів)
+                break;
             }
 
             switch (opt) {
@@ -34,7 +34,7 @@ public class Main {
             }
 
             if (testMode) {
-                return; // зупинка після першого циклу для тестів
+                return;
             }
         }
     }
