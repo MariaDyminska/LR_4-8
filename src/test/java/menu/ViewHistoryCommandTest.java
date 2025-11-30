@@ -20,23 +20,22 @@ class ViewHistoryCommandTest {
     void setUp() {
         system = new CreditSystem();
         originalOut = System.out;
-        System.setOut(new PrintStream(out));  // перехоплюємо консоль
+        System.setOut(new PrintStream(out));
     }
 
     @AfterEach
     void tearDown() {
-        System.setOut(originalOut);           // повертаємо консоль
+        System.setOut(originalOut);
         out.reset();
     }
 
-    // ----------------------------- TEST 1 --------------------------------
+
     @Test
     void testViewHistory_InitialHistory() {
-        // кредит автоматично створює 1 запис ("Додано кредит")
+
         Credit c = new Credit(1, "Test", 1000, 12, 5, CreditType.AUTO);
         system.addCredit(c);
 
-        // вводимо id = 1
         System.setIn(new ByteArrayInputStream("1\n".getBytes()));
 
         ViewHistoryCommand cmd = new ViewHistoryCommand(system);
@@ -48,14 +47,13 @@ class ViewHistoryCommandTest {
                 "Історія повинна містити запис 'Додано кредит', бо addCredit() завжди додає подію");
     }
 
-    // ----------------------------- TEST 2 --------------------------------
     @Test
     void testViewHistory_WithEvents() {
         Credit c = new Credit(2, "Test2", 2000, 10, 4, CreditType.CONSUMER);
         system.addCredit(c);
 
-        // створимо історію
-        system.makePayment(2, 500);      // це додасть 2 записи: "Платіж" і можливо "Кредит закрито"
+
+        system.makePayment(2, 500);
 
         System.setIn(new ByteArrayInputStream("2\n".getBytes()));
 
@@ -68,7 +66,7 @@ class ViewHistoryCommandTest {
                 "Після оплати має виводитись запис 'Платіж'");
     }
 
-    // ----------------------------- TEST 3 --------------------------------
+
     @Test
     void testViewHistory_InvalidIdInput() {
         System.setIn(new ByteArrayInputStream("abc\n".getBytes()));

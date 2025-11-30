@@ -67,7 +67,6 @@ public class ViewCreditConditionsCommandTest {
         assertTrue(output.contains("Термін: 12"));
         assertTrue(output.contains("Ставка"));
 
-        // Універсальна перевірка — НЕ залежить від форматування DecimalFormat
         assertTrue(output.contains("Місячний платіж"),
                 "Вивід повинен містити 'Місячний платіж'");
 

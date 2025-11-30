@@ -20,16 +20,15 @@ class ViewCreditsCommandTest {
     void setUp() {
         system = new CreditSystem();
         originalOut = System.out;
-        System.setOut(new PrintStream(out));   // перехоплення консолі
+        System.setOut(new PrintStream(out));
     }
 
     @AfterEach
     void tearDown() {
-        System.setOut(originalOut);           // повертаємо System.out
+        System.setOut(originalOut);
         out.reset();
     }
 
-    // ------------------------------------------------------
     @Test
     void testViewCredits_EmptyList() {
         ViewCreditsCommand cmd = new ViewCreditsCommand(system);
@@ -41,7 +40,7 @@ class ViewCreditsCommandTest {
                 "При порожньому списку має бути 'Немає кредитів'");
     }
 
-    // ------------------------------------------------------
+
     @Test
     void testViewCredits_WithCredits() {
 
