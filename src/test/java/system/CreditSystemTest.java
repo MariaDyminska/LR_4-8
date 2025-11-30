@@ -12,9 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CreditSystemTest {
 
-    // -------------------------------------------------------------
-    // ✔ ТЕСТ 1: Додавання кредитів
-    // -------------------------------------------------------------
     @Test
     void testAddCredit() {
         CreditSystem system = new CreditSystem();
@@ -26,9 +23,7 @@ class CreditSystemTest {
         assertEquals("A", system.getAllCredits().get(0).getName());
     }
 
-    // -------------------------------------------------------------
-    // ✔ ТЕСТ 2: Отримання всіх кредитів
-    // -------------------------------------------------------------
+
     @Test
     void testGetAllCredits() {
         CreditSystem system = new CreditSystem();
@@ -42,9 +37,7 @@ class CreditSystemTest {
         assertEquals("B", all.get(1).getName());
     }
 
-    // -------------------------------------------------------------
-    // ✔ ТЕСТ 3: findOptimal()
-    // -------------------------------------------------------------
+
     @Test
     void testFindOptimal() {
         CreditSystem system = new CreditSystem();
@@ -57,7 +50,6 @@ class CreditSystemTest {
         system.addCredit(c2);
         system.addCredit(c3);
 
-        // Тест сам обчислює правильну відповідь
         Credit expected =
                 Stream.of(c1, c2, c3)
                         .min(Comparator.comparingDouble(Credit::overpay))
@@ -69,9 +61,7 @@ class CreditSystemTest {
         assertEquals(expected.getId(), result.getId());
     }
 
-    // -------------------------------------------------------------
-    // ✔ ТЕСТ 4: smartHelper()
-    // -------------------------------------------------------------
+
     @Test
     void testSmartHelper() {
         CreditSystem system = new CreditSystem();
@@ -84,7 +74,6 @@ class CreditSystemTest {
         system.addCredit(c2);
         system.addCredit(c3);
 
-        // Логіка 100% ідентична твоїй
         Credit expected =
                 Stream.of(c1, c2, c3)
                         .min(Comparator.comparingDouble(c ->
@@ -100,9 +89,7 @@ class CreditSystemTest {
         assertEquals(expected.getId(), result.getId());
     }
 
-    // -------------------------------------------------------------
-    // ✔ ТЕСТ 5: DataFileManager — збереження та зчитування
-    // -------------------------------------------------------------
+
     @Test
     void testSaveLoadObject() throws Exception {
         String filename = "test_credit_data.bin";
@@ -121,9 +108,7 @@ class CreditSystemTest {
         new File(filename).delete();
     }
 
-    // -------------------------------------------------------------
-    // ✔ ТЕСТ 6: Інтеграційний — повна симуляція системи
-    // -------------------------------------------------------------
+
     @Test
     void testFullSystemFlow() throws Exception {
         CreditSystem system = new CreditSystem();
@@ -139,11 +124,11 @@ class CreditSystemTest {
         Credit optimal = system.findOptimal(0, 0, null);
         assertNotNull(optimal);
 
-        // Збереження
+
         String file = "system_save_test.bin";
         DataFileManager.saveObject(system.getAllCredits(), file);
 
-        // Завантаження
+
         Object loaded = DataFileManager.loadObject(file);
         assertTrue(loaded instanceof List);
 
