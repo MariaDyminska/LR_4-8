@@ -31,7 +31,6 @@ public class ShowScheduleCommandTest {
         CreditSystem system = new CreditSystem();
         system.addCredit(new Credit(1, "Test", 10000, 12, 10, CreditType.CONSUMER));
 
-        // Вхід: "1\n"
         System.setIn(new ByteArrayInputStream("1\n".getBytes()));
 
         ShowScheduleCommand cmd = new ShowScheduleCommand(system);

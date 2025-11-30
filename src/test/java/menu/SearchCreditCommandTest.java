@@ -33,7 +33,7 @@ public class SearchCreditCommandTest {
         system.addCredit(new Credit(1, "A", 5000, 12, 10, CreditType.CONSUMER));
         system.addCredit(new Credit(2, "B", 15000, 24, 5, CreditType.AUTO));
 
-        // maxRate=10, minSum=4000, term=12
+
         String input = "10\n4000\n12\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
@@ -54,7 +54,6 @@ public class SearchCreditCommandTest {
 
         system.addCredit(new Credit(1, "A", 5000, 12, 10, CreditType.CONSUMER));
 
-        // всі порожні — "\n\n\n"
         System.setIn(new ByteArrayInputStream("\n\n\n".getBytes()));
 
         SearchCreditCommand cmd = new SearchCreditCommand(system);
@@ -62,7 +61,6 @@ public class SearchCreditCommandTest {
 
         String output = out.toString();
 
-        // Має відобразити всі кредити
         assertTrue(output.contains("A"));
     }
 
@@ -70,7 +68,7 @@ public class SearchCreditCommandTest {
     void testSearchCredit_InvalidNumber() {
         CreditSystem system = new CreditSystem();
 
-        // некоректне введення: "abc"
+
         System.setIn(new ByteArrayInputStream("abc\n".getBytes()));
 
         SearchCreditCommand cmd = new SearchCreditCommand(system);

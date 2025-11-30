@@ -38,7 +38,6 @@ public class SaveToFileCommandTest {
 
         assertTrue(output.contains("Збережено"));
 
-        // Перевірка існування файлу
         File f = new File(filename);
         assertTrue(f.exists());
         f.delete();

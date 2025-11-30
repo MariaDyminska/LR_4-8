@@ -41,9 +41,8 @@ public class SmartHelperCommandTest {
     void testSmartHelper_WithCredits() {
         CreditSystem system = new CreditSystem();
 
-        // Додаємо кілька кредитів
         Credit c1 = new Credit(1, "A", 10000, 12, 10, CreditType.CONSUMER);
-        Credit c2 = new Credit(2, "B", 5000, 6, 5, CreditType.AUTO);   // найвигідніший
+        Credit c2 = new Credit(2, "B", 5000, 6, 5, CreditType.AUTO);
         Credit c3 = new Credit(3, "C", 20000, 24, 20, CreditType.MORTGAGE);
 
         system.addCredit(c1);
@@ -55,11 +54,10 @@ public class SmartHelperCommandTest {
 
         String output = out.toString();
 
-        // Має вибрати найкращий кредит — B
         assertTrue(output.contains("Розумний помічник"), "Має бути заголовок");
         assertTrue(output.contains("Назва: B"), "SmartHelper повинен вибрати кредит B");
 
-        // Універсальні перевірки чисел
+
         assertTrue(output.matches("(?s).*Сума:\\s*[-+]?[0-9]*[.,]?[0-9]+.*"));
         assertTrue(output.contains("Термін: 6"));
         assertTrue(output.matches("(?s).*Ставка:\\s*[-+]?[0-9]*[.,]?[0-9]+.*"));
