@@ -19,7 +19,6 @@ public class ManagerMenuTest {
         system = new CreditSystem();
     }
 
-    // Метод для запуску меню із заданим введенням
     private String runMenu(String input) {
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
@@ -31,7 +30,7 @@ public class ManagerMenuTest {
         try {
             menu.show();
         } catch (Exception e) {
-            // Ігноруємо помилки для тестів UI
+            // Ігноруємо помилки
         }
 
         return out.toString();
@@ -51,28 +50,27 @@ public class ManagerMenuTest {
 
     @Test
     public void testAddCredit() {
-        // пункт 1 -> не зберігати у файл -> вихід
+
         String output = runMenu("1\nні\n5\n");
         assertTrue(output.contains("МЕНЮ МЕНЕДЖЕРА"), "Меню має відобразитися");
     }
 
     @Test
     public void testEditCredit() {
-        // пункт 2 -> не завантажувати з файлу -> редагувати -> не зберігати -> вихід
+
         String output = runMenu("2\nні\nні\n5\n");
         assertTrue(output.contains("МЕНЮ МЕНЕДЖЕРА"), "Меню має відобразитися");
     }
 
     @Test
     public void testViewCredits() {
-        // пункт 3 -> не завантажувати -> вихід
+
         String output = runMenu("3\nні\n5\n");
         assertTrue(output.contains("МЕНЮ МЕНЕДЖЕРА"), "Меню має відобразитися");
     }
 
     @Test
     public void testDeleteCredit() {
-        // пункт 4 -> не зберігати -> вихід
         String output = runMenu("4\nні\n5\n");
         assertTrue(output.contains("МЕНЮ МЕНЕДЖЕРА"), "Меню має відобразитися");
     }

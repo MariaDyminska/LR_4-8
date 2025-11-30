@@ -14,32 +14,28 @@ class MakePaymentCommandTest {
     @Test
     void testMakePayment() {
 
-        // Готуємо систему
+
         CreditSystem system = new CreditSystem();
 
-        // Додаємо кредит вручну
         Credit c = new Credit(
-                1,                 // id
-                "Test",            // name
-                1000.0,            // sum
-                12,                // term
-                10.0,              // rate
+                1,
+                "Test",
+                1000.0,
+                12,
+                10.0,
                 CreditType.CONSUMER
         );
 
         system.addCredit(c);
 
-        // Імітуємо введення:
-        // id = 1
-        // amount = 200
         String input = "1\n200\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
-        // Виконуємо команду
+
         MakePaymentCommand cmd = new MakePaymentCommand(system);
         cmd.execute();
 
-        // Тепер перевіряємо стан кредиту
+
         Credit updated = system.getCreditById(1);
 
         assertNotNull(updated, "Кредит повинен існувати");
