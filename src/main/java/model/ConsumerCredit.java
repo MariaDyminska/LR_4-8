@@ -9,12 +9,10 @@ public class ConsumerCredit extends Credit {
         this.insuranceIncluded = insuranceIncluded;
     }
 
-    // правильний геттер
     public boolean isInsurance() {
         return insuranceIncluded;
     }
 
-    // стандартні геттер/сеттер
     public boolean isInsuranceIncluded(){
         return insuranceIncluded;
     }

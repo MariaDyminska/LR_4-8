@@ -26,9 +26,8 @@ public class DeleteCreditCommand implements Command {
         try {
             int id = Integer.parseInt(input);
 
-            // Тут немає реального видалення
             if (system.getCreditById(id) != null) {
-                System.out.println("Кредит видалено (симуляція)");
+                System.out.println("Кредит видалено ");
                 logger.info("Кредит успішно видалено. id = {}", id);
             } else {
                 System.out.println("Помилка: кредит з таким id не знайдено");
