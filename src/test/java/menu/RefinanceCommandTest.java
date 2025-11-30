@@ -27,17 +27,17 @@ public class RefinanceCommandTest {
     @Test
     void testRefinance() {
         String input =
-                "1\n" +   // id
-                        "6000\n" + // нова сума
-                        "8\n" +    // нова ставка
-                        "10\n";    // новий термін
+                "1\n" +
+                        "6000\n" +
+                        "8\n" +
+                        "10\n";
 
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
         RefinanceCommand cmd = new RefinanceCommand(system);
         cmd.execute();
 
-        // Перевіряємо кредит через findById
+
         Credit c = system.findById(1);
 
         Assertions.assertEquals(6000, c.getSum());

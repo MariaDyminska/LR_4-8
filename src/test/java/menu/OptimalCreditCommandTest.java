@@ -33,7 +33,6 @@ public class OptimalCreditCommandTest {
         system.addCredit(new Credit(1, "A", 5000, 12, 10, CreditType.CONSUMER));
         system.addCredit(new Credit(2, "B", 5000, 12, 5, CreditType.CONSUMER)); // кращий
 
-        // sum=5000, term=12, maxRate=10
         String input = "5000\n12\n10\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
@@ -49,7 +48,7 @@ public class OptimalCreditCommandTest {
     void testOptimalNotFound() {
         CreditSystem system = new CreditSystem();
 
-        // немає кредитів
+
         String input = "5000\n12\n5\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
