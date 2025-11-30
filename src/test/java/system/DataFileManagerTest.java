@@ -15,20 +15,18 @@ class DataFileManagerTest {
     @Test
     void testSaveAndLoadObject() throws Exception {
 
-        // --- створюємо тимчасовий файл ---
+
         File tempFile = Files.createTempFile("credit", ".dat").toFile();
         tempFile.deleteOnExit();
 
-        // --- створюємо тестовий об’єкт ---
+
         Credit credit = new AutoCredit(1, "AutoTest", 10000, 12, 10.0, "BMW");
 
-        // --- зберігаємо ---
         DataFileManager.saveObject(credit, tempFile.getAbsolutePath());
 
         assertTrue(tempFile.exists());
         assertTrue(tempFile.length() > 0);
 
-        // --- завантажуємо ---
         Object loaded = DataFileManager.loadObject(tempFile.getAbsolutePath());
 
         assertNotNull(loaded);
@@ -36,7 +34,6 @@ class DataFileManagerTest {
 
         Credit c = (Credit) loaded;
 
-        // --- перевірка полів ---
         assertEquals(1, c.getId());
         assertEquals("AutoTest", c.getName());
         assertEquals(10000, c.getSum());
