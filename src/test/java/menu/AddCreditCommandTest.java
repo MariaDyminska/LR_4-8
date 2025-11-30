@@ -18,7 +18,7 @@ class AddCreditCommandTest {
 
     @BeforeEach
     void setup() {
-        // Використовуємо справжній об'єкт CreditSystem
+
         system = new CreditSystem();
         command = new AddCreditCommand(system);
     }
