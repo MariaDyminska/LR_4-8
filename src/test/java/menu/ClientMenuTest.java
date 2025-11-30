@@ -22,9 +22,7 @@ class ClientMenuTest {
         System.setOut(new PrintStream(outContent));
     }
 
-    /**
-     * Допоміжний метод: запускає меню з заданим набором вводу.
-     */
+
     private String runMenu(String input) {
         System.setIn(new ByteArrayInputStream(input.getBytes()));
         ClientMenu menu = new ClientMenu(system);
